@@ -13,7 +13,7 @@ module:
 defaultContentLanguage: en
 languages:
   en:
-    LanguageName: Englishmkdir 
+    LanguageName: English 
     weight: 1
     title: Diêgo Canafistula
   pt:
