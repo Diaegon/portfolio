@@ -1,10 +1,11 @@
-baseURL: "https://diaegon.github.io/portfolio/"
+
 languageCode: en-us
 title: Diêgo Canafistula
 
 outputs:
   page: [html, markdown]
   home: [html, markdown, llms]
+  base_url: https://diaegon.github.io/portfolio/
 
 module:
   imports:
