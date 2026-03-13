@@ -3,15 +3,15 @@ languageCode: en-us
 title: Diêgo Canafistula
 
 outputs:
-  page: [html, markdown]
-  home: [html, markdown, llms]
-  base_url: https://diaegon.github.io/portfolio/
+  page: [html]
+  home: [html]
 
 module:
   imports:
     - path: github.com/imfing/hextra
 
 defaultContentLanguage: en
+defaultContentLanguageInSubdir: true
 languages:
   en:
     LanguageName: English 
@@ -19,7 +19,6 @@ languages:
     title: Diêgo Canafistula
   pt:
     LanguageName: Portugues
-    weight: 2
     title: Diêgo Canafistula
 
 menu:

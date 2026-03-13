@@ -1,6 +1,5 @@
 ---
 date: '2026-03-12T13:09:48-03:00'
-draft: true
 title: 'Projects'
 toc: false
 ---
