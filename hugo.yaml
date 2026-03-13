@@ -1,0 +1,81 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: Diêgo Canafistula
+
+outputs:
+  page: [html, markdown]
+  home: [html, markdown, llms]
+
+module:
+  imports:
+    - path: github.com/imfing/hextra
+
+defaultContentLanguage: en
+languages:
+  en:
+    LanguageName: English
+    weight: 1
+    title: Diêgo Canafistula
+  pt:
+    LanguageName: Portugues
+    weight: 2
+    title: Diêgo Canafistula
+
+menu:
+  main:
+    - identifier: About  
+      name: About
+      pageRef: /about
+      weight: 2
+    - identifier: Blog
+      name: Blog
+      pageRef: /blog
+      weight: 2
+    - identifier: Notes
+      name: Notes
+      pageRef: /notes
+      weight: 2
+    - identifier: Projects
+      name: Projects
+      pageRef: /projects
+      weight: 2
+    - name: Search
+      weight: 2
+      params:
+        type: search
+    - name: GitHub 
+      weight: 4
+      url: "https://github.com/diaegon"
+      params:
+        icon: github
+    - name: linkedin
+      weight: 4
+      url: "https://linkedin.com/in/diegocanafs"
+      params:
+        icon: linkedin
+    - name: mail
+      weight: 4
+      url: "mailto:diego.canafistula@gmail.com"
+      params:
+        icon: mail
+    - name: LanguageSwitch
+      weight: 5
+      params:
+        type: language-switch
+        icon: globe-alt
+
+#banner para aparecer no topo do site
+#params:
+#  banner:
+#    key: 'announcement-xxx'
+#    message: |
+#      🎉 Welcome! [Hextra](https://github.com/hextra/hextra) is a static site generator that helps you build modern websites.
+
+footer:
+  enable: true
+  displayCopyright: true
+  displayPoweredBy: true
+  width: normal
+
+displayUpdatedDate: true
+dateFormat: "January 2, 2006"
