@@ -22,4 +22,4 @@ The frontend, developed with HTML, CSS and JavaScript, provides a user interface
 
 # Current Status
 
-You can see the repository of this project on [GitHub](https://github.com/Diaegon/Email-Classifier). The project will be hosted on [apollodocs.diegocanafs.com.br](https://apollodocs.diegocanafs.com.br)
+You can see the repository of this project on [GitHub](https://github.com/Diaegon/Email-Classifier).

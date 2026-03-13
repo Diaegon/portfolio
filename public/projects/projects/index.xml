@@ -142,7 +142,7 @@ The goal of this project is to automate this process by leveraging an LLM API to
 
 &lt;h1&gt;How it Works&lt;/h1&gt;&lt;p&gt;The E-Classifier system consists of a backend API built with Python and FastAPI, which receives email data in text, pdf or .txt format. The API processes the email content and sends it to an LLM (Gemini - Google) API for analysis. The LLM returns a structured response containing the classification results, which the backend then formats and sends back to the frontend.&lt;/p&gt;
 &lt;p&gt;The frontend, developed with HTML, CSS and JavaScript, provides a user interface for submitting emails and viewing classification results. Users can input email content, and upon submission, the frontend communicates with the backend API to retrieve and display the classification outcomes in real-time. Cloudflare Tunnel.&lt;/p&gt;
-&lt;h1&gt;Current Status&lt;/h1&gt;&lt;p&gt;You can see the repository of this project on &lt;a href=&#34;https://github.com/Diaegon/Email-Classifier&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;. The project will be hosted on &lt;a href=&#34;https://apollodocs.diegocanafs.com.br&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;apollodocs.diegocanafs.com.br&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Current Status&lt;/h1&gt;&lt;p&gt;You can see the repository of this project on &lt;a href=&#34;https://github.com/Diaegon/Email-Classifier&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>

@@ -4,3 +4,4 @@ draft: true
 title: 'Notes'
 ---
 
+## Page reservd for future Reviews about books, travels and culture in general.

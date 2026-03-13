@@ -4,24 +4,107 @@
   <url>
     <loc>http://localhost:1313/projects/projects/apollodocs/</loc>
     <lastmod>2026-03-12T13:14:09-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://localhost:1313/pt/projects/projects/apollodocs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/projects/projects/apollodocs/"
+                />
   </url><url>
     <loc>http://localhost:1313/projects/projects/dserver/</loc>
     <lastmod>2026-03-12T13:14:09-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://localhost:1313/pt/projects/projects/dserver/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/projects/projects/dserver/"
+                />
   </url><url>
     <loc>http://localhost:1313/projects/projects/eclass/</loc>
     <lastmod>2026-03-12T13:14:09-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://localhost:1313/pt/projects/projects/eclass/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/projects/projects/eclass/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/projects/guides/</loc>
+    <lastmod>2026-03-12T13:14:09-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://localhost:1313/pt/projects/guides/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/projects/guides/"
+                />
   </url><url>
     <loc>http://localhost:1313/notes/</loc>
     <lastmod>2026-03-12T13:14:09-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://localhost:1313/pt/notes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/notes/"
+                />
   </url><url>
     <loc>http://localhost:1313/projects/projects/</loc>
     <lastmod>2026-03-12T13:14:09-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://localhost:1313/pt/projects/projects/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/projects/projects/"
+                />
   </url><url>
     <loc>http://localhost:1313/projects/projects/solar-maker/</loc>
     <lastmod>2026-03-12T13:14:09-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://localhost:1313/pt/projects/projects/solar-maker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/projects/projects/solar-maker/"
+                />
   </url><url>
     <loc>http://localhost:1313/blog/</loc>
     <lastmod>2026-03-12T13:13:57-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://localhost:1313/pt/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/blog/"
+                />
   </url><url>
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2026-03-12T13:13:39-03:00</lastmod>
@@ -38,6 +121,16 @@
   </url><url>
     <loc>http://localhost:1313/projects/</loc>
     <lastmod>2026-03-12T13:09:48-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://localhost:1313/pt/projects/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/projects/"
+                />
   </url><url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2026-03-12T13:09:35-03:00</lastmod>
@@ -51,8 +144,6 @@
                 hreflang="en"
                 href="http://localhost:1313/"
                 />
-  </url><url>
-    <loc>http://localhost:1313/projects/guides/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <xhtml:link

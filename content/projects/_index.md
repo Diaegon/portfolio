@@ -5,7 +5,7 @@ title: 'Projects'
 ---
 
 
-Welcome! Here you will find a collection of projects I have worked on — 
+Welcome! Here you will find a collection of [projects](/projects/projects) I have worked on — 
 from recent work to some older experiments related to technology, 
 software development, and systems.
 

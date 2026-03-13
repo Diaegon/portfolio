@@ -17,12 +17,8 @@ title: ''
 
 {{< hextra/hero-section heading="h3" >}}Oi, eu sou o Diêgo!{{< /hextra/hero-section>}}  
 
-Oi, meu nome é Diêgo!
-
 Desenvolvedor de software com formação em Física e Eletrotécnica, focado em construir sistemas backend confiáveis e ferramentas técnicas.
-<br>
 Aqui compartilho meus projetos, experimentos e os sistemas que desenvolvo ao longo da minha jornada.
-<br>
 <br>
     Sinta-se à vontade para explorar e entrar em contato se quiser trabalhar comigo.
 Atualmente estou baseado no Brasil e estou aberto a oportunidades de trabalho. Fique à vontade para navegar pelo site e me enviar um e-mail se tiver interesse.
