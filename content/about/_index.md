@@ -10,7 +10,7 @@ My journey in technology started long before software became my main focus. I be
 which shaped the way I think about systems — structured, reliable, and built with purpose.
 
 While studying Physics, I strengthened my analytical thinking and worked with scientific computing using Python to model complex systems.
-This experience taught me how to break down problems methodically. <b>On the right you can see my first tecnological intership, yield by Petrobras and IFCE.<b>
+This experience taught me how to break down problems methodically. On the right you can see my first tecnological intership, yield by Petrobras and IFCE.
 
 
 {{< /hextra/hero-container >}}
