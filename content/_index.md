@@ -4,18 +4,16 @@ title: ''
 
 ---
 
-
-
-
-{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/fotoperfil.JPG"  imageTitle="title" >}}
-
 {{< hextra/hero-headline >}}
   Welcome to My Portfolio
 {{< /hextra/hero-headline >}}
 
-<br>
 
 {{< hextra/hero-section heading="h3" >}}Hi, My name is Diêgo!{{< /hextra/hero-section>}}  
+
+
+
+{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/hero-image.jpg"  imageTitle="title" >}}
 
 <br>
 

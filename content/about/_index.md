@@ -3,22 +3,22 @@ date: '2026-03-12T13:13:39-03:00'
 title: 'About'
 ---
 
-{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/images.jpeg"  imageTitle="title" >}}
 
+
+{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/ifce-image.png" imageTitle="IFCE/petrobras intership" subtitle="bolsa IT PETROBRAS/IFCE" >}}
 My journey in technology started long before software became my main focus. I began working with electronics and low-level programming,
 which shaped the way I think about systems — structured, reliable, and built with purpose.
 
 While studying Physics, I strengthened my analytical thinking and worked with scientific computing using Python to model complex systems.
-This experience taught me how to break down problems methodically.
+This experience taught me how to break down problems methodically. <b>On the right you can see my first tecnological intership, yield by Petrobras and IFCE.<b>
 
 
 {{< /hextra/hero-container >}}
 
-
 {{< cards >}}
-  {{< card link="/" title="TCC Física" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/images.jpeg" subtitle="Tcc sobre Redes de transcrição genética" >}}
+  {{< card link="/" title="Undergraduate Thesis on Physicis" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/tcc-image.jpg" subtitle="Study about Transcriptional genetic networks" >}}
 
-  {{< card link="/" title="Projeto Solar" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/images.jpeg" subtitle="Gerenciando obra" >}}
+  {{< card link="/" title="Solar-maker" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/solar-makerv1.png" subtitle="First Software" >}}
 
 
 {{< /cards >}}

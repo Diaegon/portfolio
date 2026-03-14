@@ -3,7 +3,7 @@ date: '2026-03-12T13:14:09-03:00'
 title: 'Solar-maker'
 ---
 
-{{< hextra/hero-container image="https://www.diegocanafs.com.br/assets/images/solarmaker-image1.png" class="ma0 w-75"  imageTitle="title" >}}
+{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/solarmaker-image.png" class="ma0 w-75"  imageTitle="title" >}}
 Este projeto surgiu da necessidade de automatizar a criação de documentação técnica para projetos de energia solar.
 
 Na indústria de energia solar, a criação de documentação técnica é uma tarefa crítica, porém demorada. Ela envolve reunir e organizar uma grande quantidade de informações, incluindo especificações do sistema, diretrizes de instalação e procedimentos de manutenção. Esse processo pode ser trabalhoso e propenso a erros humanos, resultando em inconsistências e atrasos na entrega dos projetos.

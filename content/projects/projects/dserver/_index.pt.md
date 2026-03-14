@@ -3,7 +3,7 @@ date: '2026-03-12T13:14:09-03:00'
 title: 'dserver'
 ---
 
-{{< hextra/hero-container image="https://www.diegocanafs.com.br/assets/images/dserver.jpeg" class="ma0 w-75"  imageTitle="title" >}}
+{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/dserver.jpeg" class="ma0 w-75"  imageTitle="title" >}}
 A ideia de ter meu próprio servidor surgiu da necessidade de hospedar aplicações que desenvolvi e meu site pessoal.
 
 Sites estáticos podem ser hospedados gratuitamente no GitHub, e aplicações podem ser hospedadas em plataformas de nuvem que oferecem camadas gratuitas, embora com algumas limitações.
@@ -27,4 +27,4 @@ Este servidor está operando continuamente desde 4 de fevereiro de 2026, em um a
 A configuração completa da infraestrutura e os detalhes de implementação estão disponíveis no GitHub. Um guia completo em PDF com explicações adicionais e observações sobre a arquitetura pode ser visto abaixo.
 
 \
-{{< pdf "https://www.diegocanafs.com.br/assets/downloads/pdf-dserver.pdf" >}}
+{{< pdf "https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-pdfs/pdf-dserver.pdf" >}}

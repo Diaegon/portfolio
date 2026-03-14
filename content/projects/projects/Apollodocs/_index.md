@@ -4,7 +4,7 @@ title: 'Apollodocs'
 ---
 
 
-{{< hextra/hero-container image="https://www.diegocanafs.com.br/assets/images/apollodocs_image.png" class="ma0 w-75"  imageTitle="title" >}}
+{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/apollodocs-logo.png" class="ma0 w-75"  imageTitle="title" >}}
     Apollodocs is an evolution of Solar-Maker. It was created to accelerate the production of technical documentation for solar energy projects. After developing a desktop application focused on generating engineering documentation, I identified the need for a more robust, scalable, and accessible solution. Instead of running the software in a local environment, I decided to transform it into a web-based application that can be accessed from anywhere. This transition enables greater scalability, centralized updates, easier maintenance, and the possibility of integration with other systems through an API-driven architecture. 
 {{< /hextra/hero-container >}} 
 

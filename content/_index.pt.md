@@ -5,16 +5,14 @@ title: ''
 
 
 
-
-{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/fotoperfil.JPG"  imageTitle="title" >}}
-
 {{< hextra/hero-headline >}}
   Bem vindo ao meu portfólio
 {{< /hextra/hero-headline >}}
 
-<br>
-
 {{< hextra/hero-section heading="h3" >}}Oi, eu sou o Diêgo!{{< /hextra/hero-section>}}  
+
+
+{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/hero-image.jpg"  imageTitle="title" >}}
 
 Desenvolvedor de software com formação em Física e Eletrotécnica, focado em construir sistemas backend confiáveis e ferramentas técnicas.
 Aqui compartilho meus projetos, experimentos e os sistemas que desenvolvo ao longo da minha jornada.

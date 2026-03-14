@@ -9,21 +9,21 @@ title: 'Sobre'
 ### Oi, eu sou Diêgo! 
 
 \
-{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/images.jpeg"  imageTitle="IFCE image" >}}
+{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/ifce-image.png"  imageTitle="IFCE image" >}}
 
 Minha jornada na tecnologia começou muito antes de o desenvolvimento de
 software se tornar meu foco principal. Comecei trabalhando com eletrônica
 e programação de baixo nível, experiências que moldaram a forma como penso
 sobre sistemas: estruturados, confiáveis e construídos com propósito.
-<br>
-Durante minha graduação em Física, desenvolvi ainda mais meu pensamento analítico e trabalhei com computação científica utilizando Python para modelar sistemas complexos. Essa experiência me ensinou a abordar problemas de forma metódica e a dividi-los em partes menores e mais gerenciáveis.
+minha graduação em Física, desenvolvi ainda mais meu pensamento analítico e trabalhei com computação científica utilizando Python para modelar sistemas complexos. Essa experiência me ensinou a abordar problemas de forma metódica e a dividi-los em partes menores e mais gerenciáveis. Ao lado vemos o trabalho do meu grupo na bolsa de iniciação tecnológica, controle de motor de passo via arduíno.
+
 
 {{< /hextra/hero-container >}}
 
 {{< cards >}}
-  {{< card link="/" title="TCC Física" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/images.jpeg" subtitle="Tcc sobre Redes de transcrição genética" >}}
+  {{< card link="/" title="TCC Física" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/tcc-image.jpg" subtitle="Tcc sobre Redes de transcrição genética" >}}
 
-  {{< card link="/" title="Projeto Solar" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/images.jpeg" subtitle="Gerenciando obra" >}}
+  {{< card link="/" title="Projeto Solar" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/solar-makerv1.png" subtitle="Gerenciando obra" >}}
 
 {{< /cards >}}
 

@@ -4,7 +4,7 @@ title: 'Solar-maker'
 ---
 
 
-{{< hextra/hero-container image="https://www.diegocanafs.com.br/assets/images/solarmaker-image1.png" class="ma0 w-75"  imageTitle="title" >}}
+{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/solarmaker-image.png" class="ma0 w-75"  imageTitle="title" >}}
 This project comes from the necessity of automating the creation of technical documentation for solar energy projects.
 
 In the solar energy industry, creating technical documentation is a critical but time-consuming task. It involves gathering and organizing vast amounts of information, including system specifications, installation guidelines, maintenance procedures. This process can be labor-intensive and prone to human error, leading to inconsistencies and delays in project delivery.

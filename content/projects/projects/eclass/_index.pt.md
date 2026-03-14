@@ -3,7 +3,7 @@ date: '2026-03-12T13:14:09-03:00'
 title: 'E-class'
 ---
 
-{{< hextra/hero-container image="https://www.diegocanafs.com.br/assets/images/E-class-image.png" class="ma0 w-75"  imageTitle="title" >}}
+{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/E-class-image.png" class="ma0 w-75"  imageTitle="title" >}}
 Este projeto explora a integração de um Large Language Model (LLM) em uma aplicação web para permitir a classificação rápida e precisa de e-mails.
 
 Muitas empresas lidam com um grande volume de e-mails recebidos que precisam ser categorizados, priorizados e encaminhados para o departamento apropriado. A classificação manual é demorada, propensa a erros e difícil de escalar.
