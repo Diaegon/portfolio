@@ -76,6 +76,10 @@ params:
     enable: true
     displayCopyright: true
     displayPoweredBy: true
-
+  theme:
+    # light | dark | system
+    default: system
+    displayToggle: true
+      
 displayUpdatedDate: true
 dateFormat: "January 2, 2006"
