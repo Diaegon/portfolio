@@ -4,30 +4,14 @@ title: 'Projetos'
 toc: false
 ---
 
-Bem-vindo! Aqui você encontrará uma coleção de [projetos](/projects/projects) nos quais trabalhei — 
-desde trabalhos mais recentes até alguns experimentos mais antigos relacionados à tecnologia, 
-desenvolvimento de software e sistemas.
+{{< cards >}}
+  {{< card link="/pt/projects/projects/apollodocs" title="ApolloDocs" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/apollodocs-logo.png" subtitle="API que utiliza a engine do projeto solar-maker para automatizar geração de projetos de energia solar" alt="Apollodocs project card" >}}
 
-Esses projetos refletem minha jornada de aprendizado e experiência prática 
-construindo soluções com código e ferramentas de engenharia.
-
----
-
-## Feedback
-
-Esta página existe para compartilhar conhecimento e ajudar outras pessoas a entender 
-como diferentes tecnologias podem ser aplicadas em projetos reais.
-
-Se você encontrar algum erro ou tiver sugestões de melhoria, 
-seu feedback será sempre bem-vindo.
-
----
-
-## GitHub
-
-A maior parte do código-fonte desses projetos está disponível no GitHub.
-
-Alguns projetos também incluem documentação adicional, que pode estar 
-disponível na página do projeto em formato PDF para leitura ou download.
-
-Esses projetos refletem minha trajetória como desenvolvedor — desde a solução de desafios reais de engenharia até a construção de soluções escaláveis e eficientes. Cada um deles me incentivou a aprender mais, evoluir e pensar de forma crítica sobre design e arquitetura de sistemas.
+  
+  {{< card link="/pt/projects/projects/dserver" title="dserver" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/dserver.jpeg" subtitle="Pequeno homelab/VPS feita com um notebook velho e rodando continuamente por trás do Nginx." alt="dserver project card " >}}
+  
+  {{< card link="/pt/projects/projects/eclass" title="E-Classfiy" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/E-class-image.png"
+  alt="eclass project card " subtitle="Webapp para rotulação de E-mails usando LLM's" >}}
+  
+  {{< card link="/pt/projects/projects/solar-maker" title="Solar-maker" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/solarmaker-image.png" alt="Solar-maker project card " subtitle="Aplicação Desktop feita para automatizar e facilitar a gerencia e produção de projetos de energia solar" >}}
+{{< /cards >}}
