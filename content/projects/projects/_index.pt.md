@@ -5,6 +5,9 @@ title: 'Projetos'
 
 
 {{< cards >}}
+
+  {{< card link="https://www.famsolar.com.br/" title="Famsolar" image="/famsolar-webpage.png" subtitle="**Website corporativo** - **Setor de energia solar**" alt="webpage fam project card" >}}
+
   {{< card link="/pt/projects/projects/apollodocs" title="ApolloDocs" image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/apollodocs-logo.png" subtitle="API que utiliza a engine do projeto solar-maker para automatizar geração de projetos de energia solar" alt="Apollodocs project card" >}}
 
   
