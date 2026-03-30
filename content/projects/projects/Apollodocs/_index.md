@@ -2,23 +2,37 @@
 date: '2026-03-12T13:14:09-03:00'
 title: 'Apollodocs'
 ---
+\
+{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/apollodocs-logo.png" class="ma0 w-75" imageTitle="title" >}}
+<b>Apollodocs</b> is the next generation of Solar-Maker, engineered to automate and accelerate the production of technical documentation for solar energy projects.
 
-
-{{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/apollodocs-logo.png" class="ma0 w-75"  imageTitle="title" >}}
-    Apollodocs is an evolution of Solar-Maker. It was created to accelerate the production of technical documentation for solar energy projects. After developing a desktop application focused on generating engineering documentation, I identified the need for a more robust, scalable, and accessible solution. Instead of running the software in a local environment, I decided to transform it into a web-based application that can be accessed from anywhere. This transition enables greater scalability, centralized updates, easier maintenance, and the possibility of integration with other systems through an API-driven architecture. 
+Recognizing the limitations of a standalone desktop application, I completely reimagined the software as a robust web-based platform. This transition from a local environment to an API-driven architecture unlocks massive scalability, ensures centralized updates, and provides the flexibility to seamlessly integrate with other enterprise systems.
 {{< /hextra/hero-container >}} 
 
+## How It Works
 
-# How It Works
+At its core, Apollodocs is powered by a robust backend that exposes RESTful endpoints. The system receives structured JSON payloads containing solar project parameters, which are strictly validated and mapped into strongly-typed domain models. This approach guarantees type safety, consistency, and a clean separation between data validation and the underlying business logic.
 
-Apollodocs exposes RESTful endpoints that receive and process structured JSON payloads representing all solar project parameters. Once received, the input data is validated and mapped into strongly typed data classes that model the project domain. This structured representation ensures consistency, type safety, and clear separation between the validation layer and the business logic layer. The core calculation engine then processes this domain model to compute all required engineering parameters, including: 
+A specialized calculation engine then processes these domain models to compute critical engineering parameters, including: 
 
-- Energy generation estimates
-- Protection device sizing
-- Cable dimensioning
-- Electrical losses
-- Regulatory compliance parameters 
+- **Energy generation estimates**
+- **Protection device sizing**
+- **Cable dimensioning**
+- **Electrical losses**
+- **Regulatory compliance parameters**
 
-# Current Status
+## Tech Stack
 
-Apollodocs is currently in the early stages of development and we can only use the API by Swagger. The backend API is being built using Python and FastAPI, while the frontend is being developed with React. You can see check how to use the API on [youtube](https://www.youtube.com/watch?v=H4Y6HOk3VJw), Video. The project is now hosted on my webserver under the domain [apollodocs.diegocanafs.com.br](https://apollodocs.diegocanafs.com.br)
+The application is built leveraging a modern and scalable tech stack:
+
+- **Frontend:** Next.js (React), TypeScript
+- **Backend:** Python, FastAPI
+- **Database:** PostgreSQL, SQLAlchemy
+- **Infrastructure:** Docker, Nginx (Reverse Proxy), deployed on a VPS
+
+## Current Status
+
+Apollodocs is actively in development. While the Next.js frontend is currently being built out, the core calculation engine is fully functional and its endpoints can be explored interactively using Swagger UI. 
+
+- 📺 **Demo:** Watch a walkthrough of how the API works on [YouTube](https://www.youtube.com/watch?v=H4Y6HOk3VJw).
+- 🌐 **Live API:** The project is deployed and hosted at [apollodocs.diegocanafs.com.br](https://apollodocs.diegocanafs.com.br).

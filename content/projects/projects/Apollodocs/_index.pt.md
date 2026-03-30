@@ -2,23 +2,37 @@
 date: '2026-03-12T13:14:09-03:00'
 title: 'Apollodocs'
 ---
-
+\
 {{< hextra/hero-container image="https://d1aegon-bucket.s3.sa-east-1.amazonaws.com/portfolio-images/apollodocs-logo.png" class="ma0 w-75" imageTitle="title" >}}
-Apollodocs é uma evolução do Solar-Maker. Ele foi criado para acelerar a produção de documentação técnica para projetos de energia solar. Após desenvolver uma aplicação desktop focada na geração de documentação de engenharia, identifiquei a necessidade de uma solução mais robusta, escalável e acessível. Em vez de executar o software em um ambiente local, decidi transformá-lo em uma aplicação web que pode ser acessada de qualquer lugar. Essa transição permite maior escalabilidade, atualizações centralizadas, manutenção mais simples e a possibilidade de integração com outros sistemas por meio de uma arquitetura orientada a APIs.
-{{< /hextra/hero-container >}}
+O <b>Apollodocs</b> é a evolução do Solar-Maker, projetado para automatizar e acelerar a produção de documentação técnica para projetos de energia solar.
 
-# Como Funciona
+Reconhecendo as limitações de um aplicativo desktop independente, reimaginei completamente o software como uma plataforma web robusta. Essa transição de um ambiente local para uma arquitetura orientada por API (*API-driven*) possibilita escalabilidade massiva, garante atualizações centralizadas e oferece a flexibilidade de integração autônoma com outros sistemas corporativos.
+{{< /hextra/hero-container >}} 
 
-O Apollodocs expõe endpoints RESTful que recebem e processam payloads JSON estruturados contendo todos os parâmetros do projeto solar. Uma vez recebidos, os dados de entrada são validados e mapeados em classes de dados fortemente tipadas que modelam o domínio do projeto. Essa representação estruturada garante consistência, segurança de tipos e uma separação clara entre a camada de validação e a camada de lógica de negócio.
+## Como Funciona
 
-O mecanismo principal de cálculo então processa esse modelo de domínio para calcular todos os parâmetros de engenharia necessários, incluindo:
+Em sua essência, o Apollodocs é impulsionado por um backend robusto que expõe *endpoints* RESTful. O sistema recebe *payloads* JSON estruturados contendo os parâmetros do projeto solar, que são estritamente validados e mapeados em modelos de domínio fortemente tipados (*strongly-typed*). Essa abordagem garante a segurança de tipos (*type safety*), consistência e uma separação clara entre a camada de validação de dados e a lógica de negócios subjacente.
 
-- Estimativas de geração de energia
-- Dimensionamento de dispositivos de proteção
-- Dimensionamento de cabos
-- Perdas elétricas
-- Parâmetros de conformidade regulatória
+Um mecanismo de cálculo especializado processa então esses modelos de domínio para computar parâmetros essenciais de engenharia, incluindo: 
 
-# Status Atual
+- **Estimativas de geração de energia**
+- **Dimensionamento dos dispositivos de proteção**
+- **Dimensionamento de cabeamento**
+- **Cálculo de perdas elétricas**
+- **Parâmetros de conformidade regulatória**
 
-O Apollodocs está atualmente em estágio inicial de desenvolvimento e, por enquanto, a API pode ser utilizada apenas através do Swagger. O backend da API está sendo desenvolvido em Python com FastAPI, enquanto o frontend está sendo desenvolvido em React. Você pode conferir como utilizar a API neste vídeo no [YouTube](https://www.youtube.com/watch?v=H4Y6HOk3VJw). O projeto atualmente está hospedado no meu servidor web sob o domínio [apollodocs.diegocanafs.com.br](https://apollodocs.diegocanafs.com.br).
+## Tecnologias Utilizadas (Tech Stack)
+
+A aplicação foi integralmente construída utilizando uma stack moderna e escalável:
+
+- **Frontend:** Next.js (React), TypeScript
+- **Backend:** Python, FastAPI
+- **Banco de Dados:** PostgreSQL, SQLAlchemy
+- **Infraestrutura:** Docker, Nginx (Proxy Reverso), hospedado em uma VPS
+
+## Status Atual
+
+O Apollodocs está ativamente em desenvolvimento. Embora o frontend em Next.js ainda esteja sendo construído, o backend de cálculo core é totalmente funcional e a sua API pode ser explorada interativamente usando o Swagger UI.
+
+- 📺 **Demonstração:** Assista a um *walkthrough* mostrando a API em funcionamento no [YouTube](https://www.youtube.com/watch?v=H4Y6HOk3VJw).
+- 🌐 **Ambiente de Produção (Live API):** O projeto já está publicado (*deploy*) e pode ser acessado em [apollodocs.diegocanafs.com.br](https://apollodocs.diegocanafs.com.br).
