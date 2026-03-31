@@ -1,7 +1,6 @@
 ---
-title: "Experiênca de Voluntariado. Abril - 2024"
+title: "Experiênca de Voluntariado. maio - 2024"
 date: 2026-03-31T13:10:30-03:00
-draft: true
 ---
 
 
@@ -34,3 +33,6 @@ Por necessidade precisamos aprender novas palavras, começamos a pesquisar, perg
 ## Conclusão:
 
 Um voluntariado é uma experiência enriquecedora e faz com que a pessoa consiga uma imersão em algum assunto ou cultura de forma "gratuita" e séria, é uma experiência que viagem turística nenhuma vai te dar. É possível ter uma experiência semelhante aqui no Brasil, se você mora em alguma cidade turística, com certeza existem hosteis dispostos a receber voluntários com vontade de praticar e melhorar seu inglês.
+
+
+![image](/voluntario.jpeg "Time de voluntários em maio de 2024")
