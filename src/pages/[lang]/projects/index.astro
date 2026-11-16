@@ -1,0 +1,56 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Rule from '../../../components/Rule.astro';
+import ProjectCard from '../../../components/ProjectCard.astro';
+import { languages, ui, type Lang } from '../../../i18n';
+import { getProjects } from '../../../lib/content';
+
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang } }));
+}
+const lang = Astro.params.lang as Lang;
+const t = ui[lang];
+const copy = {
+  en: {
+    title: 'Problems I got tired of solving by hand.',
+    lead: 'Products of my own, professional work and infrastructure. Each one started as friction I met in the field — solar engineering, construction, investing — before it became software.',
+  },
+  pt: {
+    title: 'Problemas que cansei de resolver na mão.',
+    lead: 'Produtos próprios, trabalho profissional e infraestrutura. Cada um começou como um atrito que encontrei em campo — engenharia solar, construção civil, investimentos — antes de virar software.',
+  },
+}[lang];
+
+const all = await getProjects(lang);
+const primary = all.find((p) => p.data.primary);
+const rest = all.filter((p) => !p.data.primary);
+---
+
+<Base lang={lang} title={t.nav.projects} description={copy.lead} path="projects">
+  <div class="wrap page-head">
+    <p class="label">{t.nav.projects}</p>
+    <h1 class="display">{copy.title}</h1>
+    <p class="lead">{copy.lead}</p>
+  </div>
+  <Rule eq="cov" lang={lang} />
+  <section class="section">
+    <div class="wrap grid">
+      {primary && <ProjectCard project={primary} lang={lang} large />}
+      <div class="grid__rest">
+        {rest.map((p, i) => <ProjectCard project={p} lang={lang} delay={(i % 3) * 0.08} />)}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .grid__rest {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: 1.25rem;
+  }
+</style>

@@ -1,0 +1,98 @@
+---
+import { render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Redirect from '../../../components/Redirect.astro';
+import { formatDate, languages, otherLang, page, ui, type Lang } from '../../../i18n';
+import { getWriting, readingMinutes, slugOf, type Writing } from '../../../lib/content';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const lang of languages) {
+    const translated = new Set((await getWriting(otherLang(lang))).map(slugOf));
+    for (const entry of await getWriting(lang)) {
+      const slug = slugOf(entry);
+      paths.push({ params: { lang, slug }, props: { entry, hasTranslation: translated.has(slug) } });
+      // old Hugo URLs (/blog/post1/ ...) redirect to the new slug
+      for (const alias of entry.data.aliases) {
+        paths.push({ params: { lang, slug: alias }, props: { redirect: page(lang, `blog/${slug}`) } });
+      }
+    }
+  }
+  return paths;
+}
+
+type Props = { entry: Writing; hasTranslation: boolean } | { redirect: string };
+const props = Astro.props as Props;
+const lang = Astro.params.lang as Lang;
+const t = ui[lang];
+const entry = 'entry' in props ? props.entry : null;
+const rendered = entry ? await render(entry) : null;
+---
+
+{'redirect' in props && <Redirect to={props.redirect} />}
+{
+  entry && rendered && 'entry' in props && (
+    <Base
+      lang={lang}
+      title={entry.data.title}
+      description={entry.data.description}
+      path={`blog/${slugOf(entry)}`}
+      altPath={props.hasTranslation ? undefined : 'blog'}
+    >
+      <article class="wrap wrap--narrow">
+        <header class="page-head">
+          <p class="label">
+            <a href={page(lang, 'blog')}>← {t.backToWriting}</a>
+          </p>
+          <h1 class="title">{entry.data.title}</h1>
+          <p class="meta">
+            <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date, lang)}</time>
+            <span aria-hidden="true">·</span>
+            <span>{readingMinutes(entry.body)} min</span>
+          </p>
+        </header>
+        <div class="prose">
+          <rendered.Content />
+        </div>
+        <p class="back">
+          <a class="more" href={page(lang, 'blog')}>
+            {t.allWriting}
+          </a>
+        </p>
+      </article>
+    </Base>
+  )
+}
+
+<style>
+  .page-head .label a {
+    text-decoration: none;
+    color: var(--ember);
+  }
+  .page-head .label a:hover {
+    color: var(--text);
+  }
+  .title {
+    font-size: clamp(2.2rem, 5.2vw, 3.5rem);
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    margin-top: 1.75rem;
+  }
+  .meta {
+    display: flex;
+    gap: 0.8rem;
+    margin: 1.5rem 0 0;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .back {
+    margin: 4rem 0 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+</style>

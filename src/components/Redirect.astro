@@ -1,0 +1,31 @@
+---
+// Keeps an old URL alive by sending it to the new one.
+interface Props {
+  to: string;
+}
+const { to } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={new URL(to, Astro.site)} />
+    <meta http-equiv="refresh" content={`0; url=${to}`} />
+    <style>
+      html {
+        background: #08080b;
+        color: #c9c5ce;
+        font-family: system-ui, sans-serif;
+      }
+      a {
+        color: #ff5468;
+      }
+    </style>
+  </head>
+  <body>
+    <p><a href={to}>{to}</a></p>
+  </body>
+</html>

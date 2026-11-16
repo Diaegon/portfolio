@@ -1,0 +1,202 @@
+---
+import Base from '../../layouts/Base.astro';
+import Rule from '../../components/Rule.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import { href, languages, page, type Lang } from '../../i18n';
+import { about } from '../../data/about';
+
+export function getStaticPaths() {
+  return languages.map((lang) => ({ params: { lang } }));
+}
+const lang = Astro.params.lang as Lang;
+const a = about[lang];
+---
+
+<Base lang={lang} title={a.label} description={a.intro[0]} path="about">
+  <div class="wrap page-head">
+    <p class="label">{a.label}</p>
+    <h1 class="display">{a.title}</h1>
+  </div>
+
+  <section class="wrap story">
+    <div class="story__text">
+      <p class="hello">{a.greeting}</p>
+      {a.intro.map((p) => <p>{p}</p>)}
+    </div>
+    <figure class="story__portrait reveal">
+      <img src={href('/images/portrait.webp')} alt={a.portraitAlt} width="1400" height="1076" />
+    </figure>
+  </section>
+
+  <section class="wrap evidence">
+    <figure class="shot reveal">
+      <img src={href('/images/ifce-image.webp')} alt="" width="400" height="300" loading="lazy" />
+      <figcaption>{a.ifceCaption}</figcaption>
+    </figure>
+    {
+      a.cards.map((c, i) => (
+        <figure class="shot reveal" style={`--delay:${(i + 1) * 0.08}s`}>
+          <img src={href(c.image)} alt="" loading="lazy" />
+          <figcaption>
+            <strong>{c.title}</strong> — {c.subtitle}
+          </figcaption>
+        </figure>
+      ))
+    }
+  </section>
+
+  <section class="wrap wrap--narrow later">
+    {a.later.map((p) => <p>{p}</p>)}
+    <p><a class="more" href={page(lang, 'experience')}>{a.cta}</a></p>
+  </section>
+
+  <Rule eq="efe" lang={lang} />
+  <section class="section">
+    <div class="wrap">
+      <SectionHead label={a.offLabel} title={a.offTitle} />
+      <div class="off">
+        {
+          a.interests.map((it, i) => (
+            <div class="off__item reveal" style={`--delay:${i * 0.08}s`}>
+              <p class="off__mark" aria-hidden="true">
+                {it.mark}
+              </p>
+              <h3 class="h3">{it.title}</h3>
+              <p>{it.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .story {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+    padding-top: 1rem;
+  }
+  .story__text {
+    font-size: 1.12rem;
+    line-height: 1.8;
+  }
+  .hello {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.7rem;
+    color: var(--text);
+    margin-bottom: 0.8em;
+  }
+  .story__portrait {
+    margin: 0;
+    position: relative;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .story__portrait img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 35% 30%;
+    filter: grayscale(1) contrast(1.08) brightness(0.9);
+  }
+  /* crimson duotone, same treatment as the README banner */
+  .story__portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(200deg, rgba(255, 84, 104, 0.75), rgba(120, 12, 32, 0.9));
+    mix-blend-mode: multiply;
+  }
+  .story__portrait::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(0deg, rgba(8, 8, 11, 0.75), transparent 45%);
+  }
+
+  .evidence {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+  }
+  .shot {
+    margin: 0;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .shot img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    filter: saturate(0.85);
+  }
+  .shot figcaption {
+    padding: 0.9rem 1.1rem 1.1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+  }
+
+  .later {
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: clamp(2.5rem, 6vw, 4rem);
+    font-size: 1.12rem;
+    line-height: 1.8;
+  }
+
+  .off {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border-block: 1px solid var(--line);
+  }
+  .off__item {
+    padding: 2rem 1.75rem 2rem 0;
+  }
+  .off__item + .off__item {
+    padding-left: 1.75rem;
+    border-left: 1px solid var(--line);
+  }
+  .off__mark {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--crimson);
+    margin: 0 0 1rem;
+    line-height: 1;
+  }
+  .off__item p:last-child {
+    margin: 0.8rem 0 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
+
+  @media (max-width: 860px) {
+    .story,
+    .evidence,
+    .off {
+      grid-template-columns: 1fr;
+    }
+    .story__portrait {
+      max-width: 22rem;
+    }
+    .off__item,
+    .off__item + .off__item {
+      padding: 1.75rem 0;
+      border-left: 0;
+    }
+    .off__item + .off__item {
+      border-top: 1px solid var(--line);
+    }
+  }
+</style>

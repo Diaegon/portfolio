@@ -1,0 +1,104 @@
+---
+import { href, page, ui, type Lang } from '../i18n';
+import { slugOf, type Project } from '../lib/content';
+interface Props {
+  project: Project;
+  lang: Lang;
+  large?: boolean;
+  showImage?: boolean;
+  delay?: number;
+}
+const { project, lang, large = false, showImage = true, delay = 0 } = Astro.props;
+const d = project.data;
+const shown = d.stack.slice(0, large ? 8 : 5);
+---
+
+<article
+  class:list={['card', 'pcard', 'reveal', { 'card--primary': d.primary, 'pcard--large': large }]}
+  style={`--delay:${delay}s`}
+>
+  {
+    showImage && d.image && (
+      <div class="plate">
+        <img src={href(d.image)} alt="" />
+      </div>
+    )
+  }
+  {
+    showImage && !d.image && (
+      <div class="plate plate--blank" aria-hidden="true">
+        <span>{d.title.charAt(0)}</span>
+      </div>
+    )
+  }
+  <div class="card__body">
+    <p class:list={['label', { 'label--dim': !d.primary }]}>{d.kind}</p>
+    <h3 class="h3">
+      <a class="card__link" href={page(lang, `projects/${slugOf(project)}`)}>{d.title}</a>
+    </h3>
+    <p>{d.summary}</p>
+    {d.epigraph && <p class="pcard__epi">{d.epigraph}</p>}
+    <div class="card__foot">
+      <ul class="chips" aria-label={ui[lang].stackLabel}>
+        {shown.map((s) => <li>{s}</li>)}
+      </ul>
+    </div>
+  </div>
+</article>
+
+<style>
+  /* projects without a screenshot get a typographic plate */
+  .plate--blank {
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 110%, rgba(200, 30, 60, 0.28), transparent 70%),
+      repeating-linear-gradient(0deg, transparent 0 31px, rgba(200, 30, 60, 0.09) 31px 32px),
+      repeating-linear-gradient(90deg, transparent 0 31px, rgba(200, 30, 60, 0.09) 31px 32px),
+      var(--bg-sunken);
+  }
+  .plate--blank::after {
+    display: none;
+  }
+  .plate--blank span {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 6rem;
+    line-height: 1;
+    color: var(--crimson);
+    opacity: 0.85;
+  }
+  .pcard__epi {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem !important;
+    color: var(--eq) !important;
+  }
+  .pcard--large .h3 {
+    font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  }
+  .pcard--large .card__body {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    gap: 0.9rem;
+  }
+  .pcard--large .card__body > p:not(.label):not(.pcard__epi) {
+    font-size: 1.08rem;
+    color: var(--body);
+  }
+  @media (min-width: 860px) {
+    .pcard--large {
+      flex-direction: row;
+    }
+    .pcard--large .plate {
+      flex: 0 0 42%;
+      aspect-ratio: auto;
+      border-bottom: 0;
+      border-right: 1px solid var(--line);
+      min-height: 19rem;
+    }
+    .pcard--large .plate img {
+      position: absolute;
+      inset: 0;
+    }
+  }
+</style>

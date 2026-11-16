@@ -1,0 +1,19 @@
+---
+// The Hugo site served projects under /projects/projects/<slug>/. Keep those links working.
+import Redirect from '../../../../components/Redirect.astro';
+import { languages, page, type Lang } from '../../../../i18n';
+import { getProjects, slugOf } from '../../../../lib/content';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const lang of languages) {
+    for (const project of await getProjects(lang)) {
+      paths.push({ params: { lang, slug: slugOf(project) } });
+    }
+  }
+  return paths;
+}
+const { lang, slug } = Astro.params;
+---
+
+<Redirect to={page(lang as Lang, `projects/${slug}`)} />

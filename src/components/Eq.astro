@@ -1,0 +1,10 @@
+---
+import { equations, type EquationKey } from '../data/equations';
+interface Props {
+  name: EquationKey;
+  class?: string;
+}
+const { name, class: cls } = Astro.props;
+---
+
+<span class:list={['eq', cls]} set:html={equations[name].html} />

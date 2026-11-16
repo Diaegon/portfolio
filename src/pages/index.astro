@@ -1,0 +1,33 @@
+---
+// Root: send visitors to their language. English is the default.
+import { page } from '../i18n';
+const en = page('en');
+const pt = page('pt');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Diêgo Canafistula</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={new URL(en, Astro.site)} />
+    <script is:inline define:vars={{ en, pt }}>
+      location.replace((navigator.language || '').toLowerCase().startsWith('pt') ? pt : en);
+    </script>
+    <noscript><meta http-equiv="refresh" content={`0; url=${en}`} /></noscript>
+    <style>
+      html {
+        background: #08080b;
+        color: #c9c5ce;
+        font-family: system-ui, sans-serif;
+      }
+      a {
+        color: #ff5468;
+      }
+    </style>
+  </head>
+  <body>
+    <p><a href={en}>English</a> · <a href={pt}>Português</a></p>
+  </body>
+</html>

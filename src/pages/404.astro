@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import Eq from '../components/Eq.astro';
+import { page, ui } from '../i18n';
+---
+
+<Base lang="en" title="404" path="" altPath="">
+  <section class="wrap lost">
+    <p class="label">404 · event horizon</p>
+    <p class="lost__eq"><Eq name="schwarzschild" /></p>
+    <h1 class="display">{ui.en.notFoundTitle}</h1>
+    <p class="lead">{ui.en.notFoundBody}</p>
+    <p class="lead muted" lang="pt-BR">{ui.pt.notFoundTitle} {ui.pt.notFoundBody}</p>
+    <div class="lost__links">
+      <a class="btn btn--solid" href={page('en')}>Home <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn" href={page('pt')}>Início (PT)</a>
+      <a class="btn" href={page('en', 'projects')}>Projects</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .lost {
+    padding-block: clamp(4rem, 12vw, 9rem) 2rem;
+    max-width: calc(48rem + 2 * var(--gutter));
+  }
+  .lost__eq {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin: 1.5rem 0;
+    line-height: 1;
+  }
+  .lost__eq :global(.eq) {
+    color: var(--crimson);
+  }
+  .lost .lead {
+    margin-top: 1.5rem;
+  }
+  .lost__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+  }
+</style>

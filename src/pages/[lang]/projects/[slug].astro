@@ -1,0 +1,268 @@
+---
+import { render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import { href, languages, page, ui, type Lang } from '../../../i18n';
+import { getProjects, slugOf, type Project } from '../../../lib/content';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const lang of languages) {
+    const list = await getProjects(lang);
+    list.forEach((project, i) => {
+      paths.push({
+        params: { lang, slug: slugOf(project) },
+        props: { project, prev: list[i - 1] ?? null, next: list[i + 1] ?? null },
+      });
+    });
+  }
+  return paths;
+}
+
+interface Props {
+  project: Project;
+  prev: Project | null;
+  next: Project | null;
+}
+const { project, prev, next } = Astro.props;
+const lang = Astro.params.lang as Lang;
+const t = ui[lang];
+const d = project.data;
+const { Content } = await render(project);
+const external = (url: string) => /^https?:/.test(url);
+---
+
+<Base lang={lang} title={d.title} description={d.summary} path={`projects/${slugOf(project)}`}>
+  <article>
+    <header class="wrap page-head">
+      <p class="label"><a href={page(lang, 'projects')}>← {t.backToProjects}</a></p>
+      <p class="label label--dim kind">{d.kind}</p>
+      <h1 class="display">{d.title}</h1>
+      {d.epigraph && <p class="epi">{d.epigraph}</p>}
+      <p class="lead">{d.summary}</p>
+    </header>
+
+    <div class="wrap body">
+      <aside class="meta">
+        {
+          d.status && (
+            <div>
+              <h2 class="label label--dim">{t.statusLabel}</h2>
+              <p class="status">{d.status}</p>
+            </div>
+          )
+        }
+        <div>
+          <h2 class="label label--dim">{t.stackLabel}</h2>
+          <ul class="chips">
+            {d.stack.map((s) => <li>{s}</li>)}
+          </ul>
+        </div>
+        {
+          d.links.length > 0 && (
+            <div>
+              <h2 class="label label--dim">{t.linksLabel}</h2>
+              <ul class="links">
+                {d.links.map((l) => (
+                  <li>
+                    <a href={l.href} {...(external(l.href) ? { target: '_blank', rel: 'noopener' } : {})}>
+                      {l.label} <span aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      </aside>
+
+      <div class="main">
+        {
+          d.image && (
+            <figure class="cover">
+              <img src={href(d.image)} alt={d.imageAlt ?? ''} />
+            </figure>
+          )
+        }
+        <div class="prose">
+          <Content />
+        </div>
+        {
+          d.pdf && (
+            <div class="pdf">
+              <object data={d.pdf} type="application/pdf" aria-label="PDF">
+                <p>
+                  <a href={d.pdf} target="_blank" rel="noopener">
+                    PDF ↗
+                  </a>
+                </p>
+              </object>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </article>
+
+  <nav class="wrap pager" aria-label={t.nav.projects}>
+    {
+      prev ? (
+        <a href={page(lang, `projects/${slugOf(prev)}`)} rel="prev">
+          <span class="label label--dim">← {t.previous}</span>
+          <span class="h3">{prev.data.title}</span>
+        </a>
+      ) : (
+        <span />
+      )
+    }
+    {
+      next && (
+        <a class="pager__next" href={page(lang, `projects/${slugOf(next)}`)} rel="next">
+          <span class="label label--dim">{t.next} →</span>
+          <span class="h3">{next.data.title}</span>
+        </a>
+      )
+    }
+  </nav>
+</Base>
+
+<style>
+  .page-head .label a {
+    text-decoration: none;
+    color: var(--ember);
+  }
+  .page-head .label a:hover {
+    color: var(--text);
+  }
+  .kind {
+    margin-top: 2rem;
+  }
+  .epi {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+    color: var(--eq);
+    margin: 1rem 0 0;
+    padding-left: 1rem;
+    border-left: 3px solid var(--crimson);
+  }
+  .body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 17rem;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    margin-top: 1rem;
+  }
+  .main {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    max-width: 44rem;
+  }
+  .meta {
+    grid-column: 2;
+    position: sticky;
+    top: 5.5rem;
+    display: grid;
+    gap: 1.75rem;
+    padding-top: 0.5rem;
+  }
+  .meta h2 {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    margin-bottom: 0.75rem;
+  }
+  .status {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text);
+    padding-left: 0.9rem;
+    position: relative;
+  }
+  .status::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ember);
+    box-shadow: 0 0 10px var(--ember);
+  }
+  .links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .cover {
+    margin: 0.5rem 0 2.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-sunken);
+  }
+  .cover img {
+    width: 100%;
+  }
+  .pdf {
+    margin-top: 2.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .pdf object {
+    display: block;
+    width: 100%;
+    height: min(80vh, 760px);
+  }
+  .pdf p {
+    padding: 1.5rem;
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .body {
+      grid-template-columns: 1fr;
+    }
+    .meta {
+      grid-column: 1;
+      grid-row: 1;
+      position: static;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .main {
+      grid-row: 2;
+    }
+  }
+  .pager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: var(--section);
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .pager a {
+    display: grid;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+  .pager a:hover .h3 {
+    color: var(--ember);
+  }
+  .pager .h3 {
+    font-family: var(--serif);
+    color: var(--text);
+    transition: color 0.2s;
+  }
+  .pager__next {
+    text-align: right;
+    grid-column: 2;
+  }
+</style>
