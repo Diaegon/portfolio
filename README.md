@@ -18,4 +18,5 @@ npm run build    # output in dist/
 - **Home, About and Experience text:** `src/data/`.
 - **Colours, type and components:** `src/styles/global.css`.
 
-Pushing to `main` deploys to GitHub Pages through `.github/workflows/pages.yaml`.
+Pushing to `main` deploys to Cloudflare Pages (build command `npm run build`, output directory `dist`,
+both set in the Cloudflare dashboard).

@@ -1,8 +1,7 @@
 import { defineConfig } from 'astro/config';
 
-// On GitHub Pages the workflow passes SITE_URL / BASE_PATH from
-// actions/configure-pages, so the build works on both the custom
-// domain and the default <user>.github.io/<repo> address.
+// SITE_URL / BASE_PATH are only needed when the site is served from
+// somewhere other than the custom domain root (e.g. a sub-path).
 export default defineConfig({
   site: process.env.SITE_URL || 'https://www.diegocanafs.com.br',
   base: process.env.BASE_PATH || '/',
